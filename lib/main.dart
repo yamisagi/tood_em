@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:tood_em/pages/home_page.dart';
+import 'package:tood_em/theme/theme.dart';
 
-void main() => runApp(const HomePage());
+void main() => runApp(const MainApp());
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('TOOD\'EM'),
-        ),
-        body: const Center(
-          child: Text('Hello TooD\'em'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: ProductTheme.lightTheme,
+      title: 'TOOD\'EM',
+      home: const HomePage(),
     );
   }
 }
