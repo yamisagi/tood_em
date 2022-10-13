@@ -22,7 +22,8 @@ class RemainTask extends StatelessWidget {
       // Remaining Tasks && Today's Date
       child: Consumer(
         builder: (context, ref, child) {
-          final taskList = ref.watch(filteredTodos);
+          // Fixed the bug of not updating the remaining tasks
+          final taskList = ref.watch(todoListProvider);
           final remainingTask = taskList.where((task) => !task.isDone).length;
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
