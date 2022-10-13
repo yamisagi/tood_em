@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tood_em/providers/provider.dart';
+import 'package:tood_em/util/tasktile.dart';
 
-class TaskList extends StatelessWidget {
+class TaskList extends ConsumerWidget {
   const TaskList({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final taskList = ref.watch(todoListProvider);
+    
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       height: MediaQuery.of(context).size.height * 0.5,
@@ -15,13 +20,14 @@ class TaskList extends StatelessWidget {
         color: Colors.white.withOpacity(0.5),
       ),
       child: ListView.builder(
-        itemCount: 30,
-        itemBuilder: (context, index) => const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: ListTile(
-            leading: Icon(Icons.check_box_outline_blank),
-            title: Text('Task 1'),
-            trailing: Icon(Icons.more_vert),
+        itemCount: taskList.length,
+        itemBuilder: (context, index) => Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TaskTile(
+            checkboxCallback: (value) =>
+                ref.read(todoListProvider.notifier).toggle(taskList[index].id),
+            isChecked: taskList[index].isDone,
+            taskTitle: taskList[index].title,
           ),
         ),
       ),

@@ -59,7 +59,7 @@
 
 
 
-In this project, I am trying to create a To-Do App. Going to use Provider and Hive for local storage.
+In this project, I am trying to create a To-Do App. Going to use Riverpod and Hive for local storage.
 
 <!-- ROADMAP -->
 ## Roadmap

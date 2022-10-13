@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/product_colors.dart';
+import 'package:tood_em/models/task.dart';
+import 'package:tood_em/providers/provider.dart';
 import 'package:tood_em/util/bottom_sheet.dart';
 import 'package:tood_em/util/remain_task.dart';
 
 import '../util/task_list.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends ConsumerWidget {
+  final TextEditingController _controller = TextEditingController();
 
+  HomePage({super.key});
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         enableFeedback: false,
@@ -27,8 +26,18 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => SingleChildScrollView(
                       child: Container(
                     padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: const DialogWidget(),
+                      bottom: MediaQuery.of(context).viewInsets.bottom,
+                    ),
+                    child: DialogWidget(
+                      controller: _controller,
+                      onPressed: () {
+                        ref.read(todoListProvider.notifier).addTask(
+                              _controller.text,
+                            );
+                        Navigator.of(context).pop();
+                        _controller.clear();
+                      },
+                    ),
                   )));
         },
         child: const Icon(Icons.add),

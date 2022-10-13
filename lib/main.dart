@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tood_em/pages/home_page.dart';
 import 'package:tood_em/theme/theme.dart';
 
-void main() => runApp(const MainApp());
+void main() async {
+  runApp(
+    const ProviderScope(
+      child: MainApp(),
+    ),
+  );
+}
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -13,7 +20,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ProductTheme.lightTheme,
       title: 'TOOD\'EM',
-      home: const HomePage(),
+      home: HomePage(),
     );
   }
 }

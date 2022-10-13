@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DialogWidget extends StatelessWidget {
-  const DialogWidget({Key? key}) : super(key: key);
+  const DialogWidget({Key? key, required this.controller, this.onPressed})
+      : super(key: key);
+
+  final TextEditingController controller;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +33,15 @@ class DialogWidget extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const TextField(
-            decoration: InputDecoration(
+          TextField(
+            controller: controller,
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               labelText: 'Task',
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: onPressed,
             child: const Text('Add'),
           ),
         ],
