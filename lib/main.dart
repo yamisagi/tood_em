@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ProductTheme.lightTheme,
       title: 'TOOD\'EM',
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }

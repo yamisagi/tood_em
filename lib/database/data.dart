@@ -10,14 +10,18 @@ const _uuid = Uuid();
 class TaskData extends StateNotifier<List<Task>> {
   TaskData([List<Task>? initialTodos]) : super(initialTodos ?? []);
   void addTask(String taskName) {
-    state = [
-      ...state,
-      Task(
-        id: _uuid.v4(),
-        title: taskName,
-        isDone: false,
-      ),
-    ];
+    // Controlled if the task is empty or not
+    if (taskName.isNotEmpty) {
+      state = [
+        ...state,
+        Task(id: _uuid.v4(), title: taskName, isDone: false),
+      ];
+    } else {
+      state = [
+        ...state,
+        Task(id: _uuid.v4(), title: 'Edit this one 🤗', isDone: false),
+      ];
+    }
   }
 
   void toggle(String id) {
@@ -48,10 +52,12 @@ class TaskData extends StateNotifier<List<Task>> {
     ];
   }
 
-  // So when we want to remove a task, 
+  // So when we want to remove a task,
   // we can use where() method to filter out the task we want to remove.
-  
+
   void remove(Task target) {
     state = state.where((todo) => todo.id != target.id).toList();
   }
 }
+
+enum TaskFilter { all, active, completed }

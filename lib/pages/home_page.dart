@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/product_colors.dart';
-import 'package:tood_em/models/task.dart';
 import 'package:tood_em/providers/provider.dart';
 import 'package:tood_em/util/bottom_sheet.dart';
 import 'package:tood_em/util/remain_task.dart';
+import 'package:tood_em/util/toolbar.dart';
 
 import '../util/task_list.dart';
 
 class HomePage extends ConsumerWidget {
-  final TextEditingController _controller = TextEditingController();
-
-  HomePage({super.key});
+  const HomePage({super.key});
   @override
   Widget build(BuildContext context, ref) {
+    final controller = ref.watch(editTextProvider);
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         enableFeedback: false,
@@ -29,13 +28,14 @@ class HomePage extends ConsumerWidget {
                       bottom: MediaQuery.of(context).viewInsets.bottom,
                     ),
                     child: DialogWidget(
-                      controller: _controller,
+                      addOrEdit: true,
+                      controller: controller,
                       onPressed: () {
                         ref.read(todoListProvider.notifier).addTask(
-                              _controller.text,
+                              controller.text,
                             );
                         Navigator.of(context).pop();
-                        _controller.clear();
+                        controller.clear();
                       },
                     ),
                   )));
@@ -43,16 +43,20 @@ class HomePage extends ConsumerWidget {
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: const Text(Constant.appBarText),
+        title: Text(
+          Constant.appBarText,
+          style: Theme.of(context).textTheme.headline2?.copyWith(
+              color: ProductColors.white.withOpacity(0.7),
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const RemainTask(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.2,
-          ),
-          const Expanded(
+        children: const [
+          RemainTask(),
+          Toolbar(),
+          Expanded(
             flex: 2,
             child: TaskList(),
           ),
