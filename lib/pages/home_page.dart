@@ -5,8 +5,9 @@ import 'package:tood_em/constant/product_colors.dart';
 import 'package:tood_em/providers/provider.dart';
 import 'package:tood_em/util/bottom_sheet.dart';
 import 'package:tood_em/util/remain_task.dart';
-import 'package:tood_em/util/toolbar.dart';
+import 'package:tood_em/util/toolbar/toolbar.dart';
 
+import '../constant/text_style.dart';
 import '../util/task_list.dart';
 
 class HomePage extends ConsumerWidget {
@@ -14,9 +15,10 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final controller = ref.watch(editTextProvider);
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        enableFeedback: false,
+        enableFeedback: true,
         backgroundColor: ProductColors.primaryColor.withOpacity(0.7),
         onPressed: () {
           showModalBottomSheet(
@@ -45,10 +47,7 @@ class HomePage extends ConsumerWidget {
       appBar: AppBar(
         title: Text(
           Constant.appBarText,
-          style: Theme.of(context).textTheme.headline2?.copyWith(
-              color: ProductColors.white.withOpacity(0.7),
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic),
+          style: ProductTextSyle.appBarStyle,
         ),
       ),
       body: Column(

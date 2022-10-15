@@ -3,12 +3,16 @@ import 'package:tood_em/constant/product_colors.dart';
 
 class Constant {
   static const appBarText = 'TOOD\'EM';
-  static const addTask = 'Add Task';
-  static const editTask = 'Edit Task';
-  static const edit = 'Edit';
-  static const delete = 'Delete';
-  static const add = 'Add';
-
+  static const addTask = 'Görev ekle';
+  static const editTask = 'Görevi Düzenle';
+  static const edit = 'Düzenle';
+  static const delete = 'Sil';
+  static const add = 'Ekle';
+  static const boxName = 'tood_em';
+  static const boxGetter = 'taskList';
+  static const initialBoxMessage =
+      'Tood\'em\'e hoş geldiniz 🤗 \nSizi karşılamak için otomatik olarak bir görev ekledik. \nBu görevi silmek için sağa kaydırın ve sil\'e tıklayın 🤗 ';
+  static const labelText = 'Yapılacak Görev';
   // -----------RADIUS & PADDING-----------
   static final slidableRadius = BorderRadius.circular(10);
   static const upTextPadding = EdgeInsets.symmetric(horizontal: 5, vertical: 5);
@@ -34,4 +38,7 @@ class Constant {
       color: ProductColors.primaryColor,
     ),
   );
+
+  //-----------------TEXT STYLE-----------------
+
 }

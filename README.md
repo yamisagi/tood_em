@@ -65,7 +65,18 @@ In this project, I am trying to create a To-Do App. Going to use Riverpod and Hi
 ## Roadmap
 
 * [x] Project Setup
-* [ ] Gonna update this later.
+* [x] Implementing Hive
+* [x] Implementing Riverpod
+* [x] Create DataService for Hive
+* [x] Create Task Model
+* [x] Create Task Provider, Task Controller
+* [x] Create Task Screen
+* [x] Create Toolbar for filtering tasks
+* [x] Implement Splash Screen with (Flutter Native Splash)[https://pub.dev/packages/flutter_native_splash]
+* [x] Create Introduction Screen
+* [x] Implementing Onboarding Screen logic if user is first time or not
+* [x] Project is ready for deployment
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

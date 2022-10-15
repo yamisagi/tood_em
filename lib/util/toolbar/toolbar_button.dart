@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tood_em/database/data.dart';
 import 'package:tood_em/providers/provider.dart';
 
-import '../constant/product_colors.dart';
+import '../../constant/product_colors.dart';
 
 class ToolBarButton extends ConsumerWidget {
   final TaskFilter filterType;
@@ -25,10 +25,13 @@ class ToolBarButton extends ConsumerWidget {
     return TextButton(
       onPressed: () => ref.read(todoListFilter.notifier).state = filterType,
       style: ButtonStyle(
+        enableFeedback: false,
         visualDensity: VisualDensity.compact,
         foregroundColor: MaterialStateProperty.all(textColorFor(filterType)),
       ),
-      child: Text(title),
+      child: Text(
+        title,
+      ),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/product_colors.dart';
+import 'package:tood_em/constant/text_style.dart';
 
 class DialogWidget extends StatelessWidget {
   const DialogWidget(
@@ -36,15 +37,16 @@ class DialogWidget extends StatelessWidget {
             child: TextField(
               controller: controller,
               decoration: InputDecoration(
-                floatingLabelStyle:
-                    Theme.of(context).textTheme.headline6?.copyWith(
-                          color: ProductColors.primaryColor,
-                          fontWeight: FontWeight.bold,
-                        ),
+                floatingLabelStyle: ProductTextSyle.bottomSheetTextStyle,
                 focusedBorder: Constant.slidableTextFieldBorder,
                 enabledBorder: Constant.slidableTextFieldBorder,
                 border: Constant.slidableTextFieldBorder,
-                labelText: 'Task',
+                labelText: Constant.labelText,
+                floatingLabelBehavior: FloatingLabelBehavior.auto,
+                floatingLabelAlignment: FloatingLabelAlignment.start,
+                labelStyle: ProductTextSyle.bottomSheetTextStyle.copyWith(
+                  color: ProductColors.primaryColor.withOpacity(0.5),
+                ),
               ),
             ),
           ),
@@ -52,6 +54,7 @@ class DialogWidget extends StatelessWidget {
             padding: Constant.bottomSheetPadding,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                enableFeedback: false,
                 backgroundColor: ProductColors.primaryColor,
                 foregroundColor: ProductColors.white,
                 shape: RoundedRectangleBorder(
@@ -59,7 +62,8 @@ class DialogWidget extends StatelessWidget {
                 ),
               ),
               onPressed: onPressed,
-              child: Text(addOrEdit ? Constant.add : Constant.edit),
+              child: Text(addOrEdit ? Constant.add : Constant.edit,
+                  style: ProductTextSyle.bottomSheetButtonStyle),
             ),
           ),
         ],

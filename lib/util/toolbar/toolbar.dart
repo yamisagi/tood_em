@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/product_colors.dart';
 import 'package:tood_em/database/data.dart';
-import 'package:tood_em/util/toolbar_button.dart';
+import 'package:tood_em/util/toolbar/toolbar_button.dart';
 
 class Toolbar extends StatelessWidget {
   const Toolbar({
@@ -23,15 +23,15 @@ class Toolbar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
           ToolBarButton(
-            title: 'All',
+            title: 'Tümü',
             filterType: TaskFilter.all,
           ),
           ToolBarButton(
-            title: 'Active',
+            title: 'Aktif',
             filterType: TaskFilter.active,
           ),
           ToolBarButton(
-            title: 'Completed',
+            title: 'Tamamlanmış',
             filterType: TaskFilter.completed,
           ),
         ],

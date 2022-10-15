@@ -12,7 +12,7 @@ class TaskList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    final taskListNotifier = ref.read(todoListProvider.notifier);
+    final taskListNotifier = ref.watch(todoListProvider.notifier);
     final controller = ref.watch(editTextProvider);
     final lastList = ref.watch(filteredTodos);
 
@@ -24,6 +24,7 @@ class TaskList extends ConsumerWidget {
         color: Colors.white.withOpacity(0.5),
       ),
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: lastList.length,
         itemBuilder: (context, index) => Padding(
           padding: Constant.tilePadding,

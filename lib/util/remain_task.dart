@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/product_colors.dart';
+import 'package:tood_em/constant/text_style.dart';
 import 'package:tood_em/providers/provider.dart';
 
 class RemainTask extends StatelessWidget {
@@ -31,22 +32,15 @@ class RemainTask extends StatelessWidget {
               Padding(
                 padding: Constant.upTextPadding,
                 child: Text(
-                  'Remaining Tasks: $remainingTask',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        color: ProductColors.checkColor,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  'Kalan Görev Sayısı: $remainingTask',
+                  style: ProductTextSyle.remainTextStyle,
                 ),
               ),
               Padding(
                 padding: Constant.upTextPadding,
                 child: Text(
-                  'Today\'s Date: ${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: ProductColors.checkColor),
+                  'Bugün: ${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}',
+                  style: ProductTextSyle.remainTextStyle,
                 ),
               ),
             ],

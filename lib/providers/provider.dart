@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive/hive.dart';
 import 'package:tood_em/database/data.dart';
 import 'package:tood_em/models/task.dart';
 
@@ -26,4 +27,8 @@ final filteredTodos = Provider<List<Task>>((ref) {
     case TaskFilter.all:
       return tasks;
   }
+});
+
+final hiveBoxProvider = Provider<Box>((ref) {
+  return Hive.box('tood_em');
 });
