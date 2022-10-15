@@ -3,10 +3,10 @@
     <img src="https://avatars.githubusercontent.com/u/84624853?v=4" width="100" height="100">
   </a>
 
-  <h3 align="center">TooD'em App</h3>
+  <h3 align="center">TooD'em</h3>
 
   <p align="center">
-    TooD'em App will be a To-Do app. </p>
+    TooD'em will be a To-Do app, also performing CRUD operations on the device memory.</p>
     <a href="https://github.com/yamisagi/yamisagi"><strong>About Me 💙»</strong></a>
     <br />
     <br />
@@ -65,14 +65,16 @@ In this project, I am trying to create a To-Do App. Going to use Riverpod and Hi
 ## Roadmap
 
 * [x] Project Setup
-* [x] Implementing Hive
-* [x] Implementing Riverpod
+* [x] Implementing (Hive)[https://pub.dev/packages/hive]
+* [x] Implementing (Riverpod)[https://pub.dev/packages/riverpod]
 * [x] Create DataService for Hive
 * [x] Create Task Model
 * [x] Create Task Provider, Task Controller
 * [x] Create Task Screen
 * [x] Create Toolbar for filtering tasks
-* [x] Implement Splash Screen with (Flutter Native Splash)[https://pub.dev/packages/flutter_native_splash]
+* [x] Implement Splash Screen with (Flutter Native Splash)[def]
+* [x] Implement UUID for Task ID generation (UUID)[https://pub.dev/packages/uuid]
+* [x] Implement Page Indicator for Onboarding screen (Smooth Page Indicator)[https://pub.dev/packages/smooth_page_indicator]
 * [x] Create Introduction Screen
 * [x] Implementing Onboarding Screen logic if user is first time or not
 * [x] Project is ready for deployment
@@ -128,3 +130,4 @@ Eren C. - [@_yamisagi](https://twitter.com/_yamisagi)
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: lib/constants/ss.png
+[def]: https://pub.dev/packages/flutter_native_splash

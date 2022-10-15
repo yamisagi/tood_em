@@ -7,7 +7,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/models/task.dart';
 import 'package:tood_em/pages/home_page.dart';
-import 'package:tood_em/pages/onboard_page.dart';
 import 'package:tood_em/theme/theme.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:tood_em/util/onboarding/opening_logic.dart';

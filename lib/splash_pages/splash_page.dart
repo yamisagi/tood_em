@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:tood_em/constant/const.dart';
 import 'package:tood_em/constant/text_style.dart';
 
 class SplashPage extends StatelessWidget {
