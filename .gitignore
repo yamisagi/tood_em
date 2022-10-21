@@ -31,6 +31,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+/tood_em_product_res/
 
 # Symbolication related
 app.*.symbols
