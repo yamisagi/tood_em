@@ -54,7 +54,10 @@
 
 
 
-<!-- https://user-images.githubusercontent.com/84624853/194730454-7f950a09-097c-4d95-b6ae-f517d0988c86.mp4 -->
+
+https://user-images.githubusercontent.com/84624853/195998325-901a8aa2-e0d4-4744-b9d0-769d9cf40240.mp4
+
+
 
 
 
@@ -65,16 +68,16 @@ In this project, I am trying to create a To-Do App. Going to use Riverpod and Hi
 ## Roadmap
 
 * [x] Project Setup
-* [x] Implementing (Hive)[https://pub.dev/packages/hive]
-* [x] Implementing (Riverpod)[https://pub.dev/packages/riverpod]
+* [x] Implementing [Hive](https://pub.dev/packages/hive)
+* [x] Implementing [Riverpod](https://pub.dev/packages/riverpod)
 * [x] Create DataService for Hive
 * [x] Create Task Model
 * [x] Create Task Provider, Task Controller
 * [x] Create Task Screen
 * [x] Create Toolbar for filtering tasks
-* [x] Implement Splash Screen with (Flutter Native Splash)[def]
-* [x] Implement UUID for Task ID generation (UUID)[https://pub.dev/packages/uuid]
-* [x] Implement Page Indicator for Onboarding screen (Smooth Page Indicator)[https://pub.dev/packages/smooth_page_indicator]
+* [x] Implement Splash Screen with [Flutter Native Splash](def)
+* [x] Implement UUID for Task ID generation [UUID](https://pub.dev/packages/uuid)
+* [x] Implement Page Indicator for Onboarding screen [Smooth Page Indicator](https://pub.dev/packages/smooth_page_indicator)
 * [x] Create Introduction Screen
 * [x] Implementing Onboarding Screen logic if user is first time or not
 * [x] Project is ready for deployment
